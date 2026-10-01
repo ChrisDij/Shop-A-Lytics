@@ -1,0 +1,19 @@
+{
+  "name": "shop-a-lytics-team",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace frontend",
+    "build": "npm run build --workspace frontend",
+    "test": ".venv/bin/python -m pytest backend/tests",
+    "test:backend": ".venv/bin/python -m pytest backend/tests",
+    "start:backend": ".venv/bin/python backend/run.py"
+  },
+  "engines": {
+    "node": ">=20.19"
+  }
+}
+
