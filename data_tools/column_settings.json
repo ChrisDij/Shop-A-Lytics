@@ -1,0 +1,38 @@
+{
+  "_help": "Maps a supplied dataset onto the BoschCard ERD. 'columns' = {our_column: their_column}. Edit this file, not the code, when the lecturer's data differs.",
+  "files": {
+    "student": "student.csv",
+    "vendor_type": "vendor_type.csv",
+    "vendor": "vendor.csv",
+    "transaction": "transaction.csv"
+  },
+  "columns": {
+    "student": {"id_number": "id_number", "last_name": "last_name", "first_name": "first_name", "dob": "dob",
+                "gender": "gender", "email": "email", "phone": "phone", "address": "address"},
+    "vendor_type": {"type_id": "type_id", "name": "name"},
+    "vendor": {"vendor_id": "vendor_id", "name": "name", "address": "address", "gps": "gps", "type_id": "type_id"},
+    "transaction": {"transaction_id": "transaction_id", "student_id": "student_id", "vendor_id": "vendor_id",
+                    "datetime": "datetime", "value": "value", "discount": "discount"}
+  },
+  "formats": {
+    "_datetime": "Python strptime format of the transaction datetime column, e.g. %d/%m/%Y %H:%M",
+    "datetime": "%Y-%m-%d %H:%M:%S",
+    "_dob": "strptime format of student dob",
+    "dob": "%Y-%m-%d",
+    "_gps_order": "'lng,lat' or 'lat,lng' (brackets optional in the source)",
+    "gps_order": "lng,lat",
+    "_money_unit": "'rand' or 'cents' for value (and discount when it is an amount)",
+    "money_unit": "rand",
+    "_discount_is": "'amount' (money), 'percent' (e.g. 15) or 'fraction' (e.g. 0.15)",
+    "discount_is": "amount",
+    "_value_is": "'gross' = before discount, 'net' = after discount",
+    "value_is": "gross"
+  },
+  "privacy": {
+    "salt_env_var": "BOSCHCARD_SALT",
+    "salt_file": "analytics_salt.txt",
+    "age_band_edges": [20, 22, 24],
+    "reference_date": "latest_transaction",
+    "residence_pattern": "(?i)\\b(room|residence|hall|lodge|court)\\b"
+  }
+}
