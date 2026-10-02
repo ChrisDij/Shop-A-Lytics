@@ -1,0 +1,25 @@
+promo_id,vendor_id,vendor_name,start_date,end_date,discount_rate,injected_extra_transactions,start_in_seasonal_peak
+1,7,Bosveld Braai House,2026-02-18,2026-02-28,0.25,83,True
+2,10,Ons Plek Kombuis,2025-05-13,2025-06-01,0.3,66,False
+3,1,Oak & Vine Bistro,2025-09-12,2025-09-27,0.3,61,False
+4,24,Zest Cocktail Bar,2026-03-01,2026-03-15,0.25,104,True
+5,20,Hop & Barrel,2025-10-08,2025-10-23,0.35,78,False
+6,25,Vault Live Music Venue,2025-09-02,2025-09-15,0.35,85,False
+7,31,Winelands Airport Shuttle,2026-02-06,2026-02-22,0.25,119,True
+8,27,RideStel,2025-08-29,2025-09-13,0.25,62,False
+9,32,Scoot Stellies,2026-05-04,2026-05-12,0.35,103,False
+10,40,Kloof Pharmacy,2025-02-09,2025-02-19,0.35,96,True
+11,36,Rozendal Clinic Pharmacy,2026-04-16,2026-04-24,0.3,86,False
+12,37,Bosman Pharmacy,2026-05-29,2026-06-11,0.3,101,False
+13,47,Study Hub Stationery,2026-02-22,2026-03-02,0.3,101,True
+14,44,Sole Kicks Sneakers,2025-10-02,2025-10-12,0.25,120,False
+15,46,Bosman Books,2026-04-08,2026-04-28,0.25,68,False
+16,57,Open Air Movie Nights,2025-03-01,2025-03-12,0.35,60,True
+17,60,Cellar Comedy Club,2025-05-23,2025-06-04,0.35,76,False
+18,55,Starlight Cinema,2025-10-16,2025-11-06,0.35,65,False
+19,61,IronWorks Gym,2026-02-05,2026-02-24,0.3,99,True
+20,62,FlexZone Fitness,2025-05-17,2025-06-01,0.35,61,False
+21,65,Aqua Active Pool,2025-09-15,2025-10-02,0.3,95,False
+22,74,The Reading Room Cafe,2025-03-03,2025-03-24,0.3,111,True
+23,76,Matcha Moment,2026-04-19,2026-05-08,0.25,64,False
+24,72,Crumbs & Co,2026-09-04,2026-09-16,0.3,102,False
