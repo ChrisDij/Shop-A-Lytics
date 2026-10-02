@@ -1,0 +1,5 @@
+name,address,gps,type,popularity,mode
+Example Bistro,"12 Dorp St, Stellenbosch, 7600","(18.859600,-33.934900)",Restaurant,1.5,
+Example Pharmacy,"3 Plein St, Stellenbosch, 7600","(18.860400,-33.935200)",Pharmacy,1.0,
+Example Cabs,"1 Merriman Ave, Stellenbosch, 7600","(18.861800,-33.929800)",Transport,1.0,ehail
+Example Yoga Studio,"8 Bird St, Stellenbosch, 7600","(18.862300,-33.933800)",Wellness Studios,,
