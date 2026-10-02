@@ -159,4 +159,3 @@ See `docs/` for the BRD, adaptation document and decisions log.
 Team: Nkazimulo (ITBA), Iman (Project Manager), Christiaan (Lead Developer), Bourgeoise (QA).
 
 Clients: Kayla, Tendekai, Carel and Tinashe.
-
