@@ -1,0 +1,79 @@
+vendor_id,name,address,gps,type_id
+1,Oak & Vine Bistro,"29 Bird St, Stellenbosch, 7600","(18.860973,-33.933632)",1
+2,Die Eetkamer,"82 Dorp St, Stellenbosch, 7600","(18.858717,-33.935330)",1
+3,Rozendal Grill,"70 Church St, Stellenbosch, 7600","(18.858981,-33.934378)",1
+4,Spice Route Kitchen,"37 Plein St, Stellenbosch, 7600","(18.860816,-33.934189)",1
+5,Kloof Street Trattoria,"1 Andringa St, Stellenbosch, 7600","(18.861199,-33.932703)",1
+6,The Pepper Pot,"124 Dorp St, Stellenbosch, 7600","(18.859119,-33.935752)",1
+7,Bosveld Braai House,"79 Bird St, Stellenbosch, 7600","(18.862626,-33.933760)",1
+8,Umami Stellenbosch,"98 Andringa St, Stellenbosch, 7600","(18.861175,-33.932768)",1
+9,Casa Vinho,"14 Plein St, Stellenbosch, 7600","(18.858798,-33.935761)",1
+10,Ons Plek Kombuis,"153 Dorp St, Stellenbosch, 7600","(18.859973,-33.934396)",1
+11,Vinehouse Steakery,"154 Church St, Stellenbosch, 7600","(18.858078,-33.935194)",1
+12,Lemon & Thyme,"30 Dorp St, Stellenbosch, 7600","(18.858403,-33.934973)",1
+13,Kaya Kitchen,"91 Plein St, Stellenbosch, 7600","(18.860920,-33.934648)",1
+14,Sakura Sushi Bar,"118 Plein St, Stellenbosch, 7600","(18.860843,-33.934404)",1
+15,Karoo Table,"124 Bird St, Stellenbosch, 7600","(18.862041,-33.933720)",1
+16,Tapas Cellar,"4 Andringa St, Stellenbosch, 7600","(18.861110,-33.932333)",1
+17,Neon Cellar,"88 Andringa St, Stellenbosch, 7600","(18.861045,-33.932456)",2
+18,The Tap Room,"158 Dorp St, Stellenbosch, 7600","(18.858863,-33.935692)",2
+19,Fuse Nightclub,"57 Andringa St, Stellenbosch, 7600","(18.860214,-33.932043)",2
+20,Hop & Barrel,"8 Andringa St, Stellenbosch, 7600","(18.862533,-33.931917)",2
+21,Shebeen 7600,"140 Dorp St, Stellenbosch, 7600","(18.860066,-33.934417)",2
+22,The Blue Door Lounge,"113 Victoria St, Stellenbosch, 7600","(18.865685,-33.935348)",2
+23,Rooftop Sundowner,"141 Bird St, Stellenbosch, 7600","(18.862863,-33.931727)",2
+24,Zest Cocktail Bar,"76 Victoria St, Stellenbosch, 7600","(18.865439,-33.937192)",2
+25,Vault Live Music Venue,"145 Bird St, Stellenbosch, 7600","(18.862138,-33.934034)",2
+26,Tequila Trail,"105 Andringa St, Stellenbosch, 7600","(18.858970,-33.932959)",2
+27,RideStel,"34 Adam Tas Rd, Stellenbosch, 7600","(18.855034,-33.936314)",3
+28,Stellies Cabs,"142 Merriman Ave, Stellenbosch, 7600","(18.863208,-33.930477)",3
+29,Eikestad E-Hail,"8 Merriman Ave, Stellenbosch, 7600","(18.862153,-33.930220)",3
+30,Night Owl Safe Rides,"121 Plein St, Stellenbosch, 7600","(18.861035,-33.933909)",3
+31,Winelands Airport Shuttle,"133 Adam Tas Rd, Stellenbosch, 7600","(18.853794,-33.936533)",3
+32,Scoot Stellies,"9 Plein St, Stellenbosch, 7600","(18.860791,-33.935363)",3
+33,Eikestad Pharmacy,"118 Merriman Ave, Stellenbosch, 7600","(18.862823,-33.930954)",4
+34,Dorp Street Dispensary,"1 Merriman Ave, Stellenbosch, 7600","(18.862956,-33.929354)",4
+35,Campus Health Pharmacy,"12 Plein St, Stellenbosch, 7600","(18.860069,-33.934285)",4
+36,Rozendal Clinic Pharmacy,"47 Ryneveld St, Stellenbosch, 7600","(18.858066,-33.933851)",4
+37,Bosman Pharmacy,"21 Merriman Ave, Stellenbosch, 7600","(18.860614,-33.929710)",4
+38,Green Cross Pharmacy,"67 Merriman Ave, Stellenbosch, 7600","(18.861839,-33.930479)",4
+39,Victoria Chemist,"141 Ryneveld St, Stellenbosch, 7600","(18.857585,-33.933211)",4
+40,Kloof Pharmacy,"134 Plein St, Stellenbosch, 7600","(18.861147,-33.935114)",4
+41,Thread & Needle,"27 Dorp St, Stellenbosch, 7600","(18.859119,-33.935896)",5
+42,Urban Stellies Apparel,"79 Dorp St, Stellenbosch, 7600","(18.859637,-33.935806)",5
+43,Thrift Society,"94 Andringa St, Stellenbosch, 7600","(18.861343,-33.933167)",5
+44,Sole Kicks Sneakers,"27 Andringa St, Stellenbosch, 7600","(18.860231,-33.932881)",5
+45,Campus Threads,"56 Dorp St, Stellenbosch, 7600","(18.860288,-33.935027)",5
+46,Bosman Books,"82 Plein St, Stellenbosch, 7600","(18.860086,-33.935030)",5
+47,Study Hub Stationery,"152 Dorp St, Stellenbosch, 7600","(18.857675,-33.934936)",5
+48,TechMart Electronics,"99 Andringa St, Stellenbosch, 7600","(18.859639,-33.932155)",5
+49,Paper Trail Bookshop,"24 Neethling St, Stellenbosch, 7600","(18.864084,-33.941395)",5
+50,Cape Gadget Hub,"38 Andringa St, Stellenbosch, 7600","(18.861161,-33.933044)",5
+51,Denim District,"9 Ryneveld St, Stellenbosch, 7600","(18.858633,-33.932530)",5
+52,Fresh Basket Market,"97 Andringa St, Stellenbosch, 7600","(18.861257,-33.932283)",5
+53,Living Space Homeware,"92 Andringa St, Stellenbosch, 7600","(18.860873,-33.932003)",5
+54,Bargain Barn,"146 Neethling St, Stellenbosch, 7600","(18.864096,-33.940246)",5
+55,Starlight Cinema,"45 Victoria St, Stellenbosch, 7600","(18.864030,-33.937358)",6
+56,Eikestad Bioscope,"79 Church St, Stellenbosch, 7600","(18.859987,-33.934371)",6
+57,Open Air Movie Nights,"97 Victoria St, Stellenbosch, 7600","(18.865786,-33.936794)",6
+58,Rozendal Theatre,"75 Church St, Stellenbosch, 7600","(18.859803,-33.934853)",6
+59,Kampus Playhouse,"147 Church St, Stellenbosch, 7600","(18.859919,-33.934323)",6
+60,Cellar Comedy Club,"159 Victoria St, Stellenbosch, 7600","(18.864317,-33.937007)",6
+61,IronWorks Gym,"1 Neethling St, Stellenbosch, 7600","(18.863620,-33.941504)",7
+62,FlexZone Fitness,"132 Merriman Ave, Stellenbosch, 7600","(18.861937,-33.930392)",7
+63,Pulse Studio Yoga,"120 Adam Tas Rd, Stellenbosch, 7600","(18.854791,-33.937661)",7
+64,Peak Performance Crossfit,"97 Banghoek Rd, Stellenbosch, 7600","(18.873647,-33.924605)",7
+65,Aqua Active Pool,"127 Adam Tas Rd, Stellenbosch, 7600","(18.855561,-33.938248)",7
+66,Kampus Climbing Wall,"40 Adam Tas Rd, Stellenbosch, 7600","(18.854304,-33.937190)",7
+67,Bean There Coffee,"134 Church St, Stellenbosch, 7600","(18.859835,-33.934927)",8
+68,The Daily Grind,"116 Dorp St, Stellenbosch, 7600","(18.858911,-33.935062)",8
+69,Koffiehuis Dorp,"152 Plein St, Stellenbosch, 7600","(18.860281,-33.934388)",8
+70,Flat White Lab,"97 Church St, Stellenbosch, 7600","(18.859272,-33.934034)",8
+71,Plein Street Roasters,"133 Andringa St, Stellenbosch, 7600","(18.859968,-33.933057)",8
+72,Crumbs & Co,"116 Dorp St, Stellenbosch, 7600","(18.858928,-33.934241)",8
+73,Cortado Corner,"124 Andringa St, Stellenbosch, 7600","(18.860802,-33.932666)",8
+74,The Reading Room Cafe,"82 Bird St, Stellenbosch, 7600","(18.862409,-33.933935)",8
+75,Sunrise Bakery & Deli,"34 Bird St, Stellenbosch, 7600","(18.861604,-33.933096)",8
+76,Matcha Moment,"137 Church St, Stellenbosch, 7600","(18.860417,-33.935365)",8
+77,Bru & Brew,"65 Bird St, Stellenbosch, 7600","(18.861057,-33.932618)",8
+78,Stellenbosch Tea House,"39 Andringa St, Stellenbosch, 7600","(18.861137,-33.933176)",8
