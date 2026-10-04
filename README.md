@@ -12,17 +12,17 @@ A subscription analytics dashboard that turns anonymised BoschCard student trans
 | `frontend/` | React (Vite) dashboard with Recharts |
 | `data_tools/` | Synthetic data generator, validator, column mapping and loaders |
 | `data/` | Synthetic BoschCard CSVs, reference calendars, generated databases |
-| `scripts/` | One-command database build **TODO: create `build_databases.py`** |
+| `scripts/` | Database setup and other team utilities as they are added |
 | `docs/` | BRD, adaptation document, decisions log, stack justification |
 
 ## 2. Technology stack
 
-Python 3 + Flask (API), React + Vite + Recharts (UI), SQLite via SQLAlchemy (persistence), pandas (analytics), Flask sessions + Werkzeug password hashing (login), fpdf2 (PDF export), pytest (tests). All free and open source. Justification: `docs/stack_justification.md` **TODO**.
+Python 3 + Flask (API), React + Vite + Recharts (UI), SQLite via SQLAlchemy (persistence), pandas (analytics), Flask sessions + Werkzeug password hashing (login), fpdf2 (PDF export), pytest (tests). All are free and open source. The full rationale is in `docs/stack justification/Shop-A-Lytics_Stack_Justification.pdf`.
 
 ## 3. Prerequisites
 
-- Python 3.10 or newer **TODO: confirm version**
-- Node.js 18 or newer and npm **TODO: confirm version**
+- Python 3.10 or newer
+- Node.js 20.19 or newer and npm
 - Git
 
 No database server is needed: both databases are SQLite files created by the setup steps below.
@@ -34,17 +34,13 @@ git clone <repo-url>
 cd Shop-A-Lytics
 cp .env.example .env        # then edit values if needed (see section 6)
 
-# Backend
-cd backend
+# Python dependencies (the shared virtual environment lives at the repository root)
 python -m venv .venv
 source .venv/bin/activate    # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-cd ..
+pip install -r backend/requirements.txt
 
-# Frontend
-cd frontend
+# JavaScript dependencies (run this at the repository root; npm manages frontend/ as a workspace)
 npm install
-cd ..
 ```
 
 ## 5. Build the databases
@@ -63,8 +59,7 @@ python data_tools/validate_data.py data/synthetic
 # 2. Build the privacy-safe analytics database
 python data_tools/load_analytics.py data/synthetic --out data/analytics.sqlite --prepared data/prepared
 
-# 3. Create the application tables and demo accounts  TODO: scripts/build_databases.py
-python scripts/build_databases.py
+# 3. Application tables are created when the Flask app starts.
 ```
 
 `load_analytics.py` removes names, emails, phone numbers, home addresses and exact birth dates; replaces student numbers with a salted pseudonym; stores money as integer cents; and keeps only age band, gender and residence type. Use the same `BOSCHCARD_SALT` every time, or pseudonyms change.
@@ -82,25 +77,26 @@ python data_tools/generate_boschcard_data.py data/synthetic_anomalies 200000 120
 
 ## 6. Configuration
 
-Settings live in `.env` (see `.env.example`). **TODO: confirm names**
+Settings live in `.env` (see `.env.example`).
 
 | Variable | Meaning |
 |---|---|
-| `ANALYTICS_DB` | Path to `analytics.sqlite` |
-| `APP_DB` | Path to `app.sqlite` |
+| `ANALYTICS_DB_PATH` | Path to the read-only `analytics.sqlite` file |
+| `DATABASE_URL` | SQLAlchemy URL for `app.sqlite` |
 | `BOSCHCARD_SALT` | Secret used to pseudonymise student numbers (never commit it) |
 | `SECRET_KEY` | Flask session secret |
 | `MIN_GROUP_SIZE` | Minimum group size before a figure is shown (default 10) |
 | `MIN_HISTORY_DAYS` | History needed before anomaly detection runs |
+| `DEMO_VENDOR_ID` | Local-only vendor fallback until login integration is complete; remove in shared deployments |
 
 ## 7. Run the application
 
 ```bash
-# Terminal 1: backend
-cd backend && python run.py          # TODO: confirm port (e.g. http://localhost:5000)
+# Terminal 1: backend (from the repository root)
+npm run start:backend                # http://localhost:5000
 
-# Terminal 2: frontend
-cd frontend && npm run dev           # TODO: confirm port (e.g. http://localhost:5173)
+# Terminal 2: frontend (from the repository root)
+npm run dev                          # Vite prints the local URL, normally http://localhost:5173
 ```
 
 Open the frontend URL in a browser.
@@ -118,31 +114,32 @@ Open the frontend URL in a browser.
 2. Edit `data_tools/column_settings.json` so it describes that data: file and column names, datetime format, GPS order (`lng,lat` or `lat,lng`), money unit (rand or cents), whether `discount` is an amount, percent or fraction, and whether `value` is before or after discount.
 3. Run `python data_tools/load_analytics.py <folder> --out data/analytics.sqlite --prepared data/prepared`.
 4. Read `data/prepared/validation_report.txt`. Errors stop the load; warnings are loaded but need checking.
-5. Run `python scripts/build_databases.py` again so demo users are linked to the new vendors.
+5. Restart the backend. It reads the rebuilt analytics database without changing the application database.
 
 Nothing in the application depends on specific vendor IDs, vendor type names or date ranges. On start-up the app checks how much data it has; if history is too short, anomaly flags show "Not assessed: insufficient history" and thin segments show a "not enough data" screen.
 
 ## 9. Tests
 
 ```bash
-pytest -q data_tools/test_etl.py     # data layer: loaders, privacy of analytics DB, column mapping
-cd backend && pytest -q              # API: health, privacy, vendor isolation, datasets  TODO
+npm test                             # backend and data-tool tests
+npm run test:backend                 # API, readiness, anomaly rules and vendor isolation
+npm run test:data                    # loaders, privacy and column mapping
 ```
 
 ## 10. Privacy, fairness and causal safeguards
 
-Concrete mechanisms (**TODO: update file paths and statuses to match what is actually built**):
+Concrete mechanisms currently implemented:
 
 | Requirement | Mechanism | Where |
 |---|---|---|
 | Students never identifiable (NFR 2) | Direct identifiers never enter the analytics database; salted pseudonym only; age band instead of date of birth | `data_tools/load_analytics.py` |
-| Minimum group size (NFR 3) | Any figure based on fewer than `MIN_GROUP_SIZE` (10) students or transactions is suppressed | `backend/app/data/privacy.py` |
-| Competitor confidentiality (NFR 4) | Every query is scoped to the logged-in user's vendor; tests fail if another vendor's data is reachable | `backend/app/data/analytics.py`, `tests/test_vendor_isolation.py` |
-| Role-based access (NFR 4) | Owner sees full drill-down and team management; Member sees reports only | `backend/app/routes/` |
+| Minimum group size (NFR 3) | Required for grouped dashboard and export figures; integration is owned by the privacy/frontend slices | `MIN_GROUP_SIZE` configuration |
+| Competitor confidentiality (NFR 4) | Analytics queries derive vendor scope from the session (or the explicit local demo setting), never a request parameter | `backend/app/data/analytics.py`, `backend/tests/test_vendor_isolation.py` |
+| Role-based access (NFR 4) | Shared route guards and password helpers are ready for the authentication slice | `backend/app/security.py` |
 | Audit trail (NFR 5) | Access to business information is logged | `backend/app/models/app_models.py` |
 | Anomalies are not accusations (NFR 6) | Wording: "unusual activity requiring investigation" | `backend/app/services/anomaly.py` |
 | Association, not causation (NFR 7) | Promotion views compare against a stated baseline and say "observed", never "caused" | `backend/app/services/baselines.py` |
-| Insufficient history (NFR 10) | "Not assessed: insufficient history" instead of a flag | `backend/app/services/anomaly.py` |
+| Insufficient history (NFR 10) | "Not assessed: insufficient history" instead of a flag | `backend/app/data/readiness.py`, `backend/app/services/anomaly.py` |
 
 ## 11. Known limitations
 
@@ -151,6 +148,7 @@ Concrete mechanisms (**TODO: update file paths and statuses to match what is act
 - Product, brand, stock and basket-level insights are out of scope: the data model has no such fields.
 - Billing, real-time data and non-Stellenbosch markets are out of scope.
 - The synthetic data is fictional. Names, emails and phone numbers do not belong to real people.
+- Authentication screens and session-creation routes are being integrated by their assigned owner. Until then, `DEMO_VENDOR_ID` provides an explicit local development scope only.
 
 ## 12. Documents and team
 

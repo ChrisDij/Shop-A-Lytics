@@ -14,9 +14,6 @@ for rule, methods in [
     ("/api/logout", ["POST"]),
     ("/api/password", ["POST"]),
     ("/api/team", ["GET", "POST"]),
-    ("/api/locations", ["GET"]),
-    ("/api/alerts", ["GET"]),
-    ("/api/meta", ["GET"]),
     ("/api/feedback", ["GET", "POST"]),
     ("/api/summary", ["GET"]),
     ("/api/details", ["GET"]),
@@ -28,4 +25,3 @@ for rule, methods in [
         view_func=not_implemented,
         methods=methods,
     )
-

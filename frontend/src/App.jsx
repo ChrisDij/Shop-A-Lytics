@@ -1,15 +1,14 @@
+import Alerts from "./pages/Alerts.jsx";
+
+
 export default function App() {
   return (
-    <main>
-      <section className="shell" aria-labelledby="page-title">
-        <p className="eyebrow">Team development scaffold</p>
-        <h1 id="page-title">Shop-A-Lytics</h1>
-        <p>
-          React, Vite and Recharts are ready. Replace this screen with the first
-          end-to-end team slice.
-        </p>
-      </section>
-    </main>
+    <div className="app-shell">
+      <header className="topbar">
+        <a className="brand" href="/">Shop-A-Lytics</a>
+        <nav aria-label="Primary navigation"><a href="#alerts">Alerts</a></nav>
+      </header>
+      <main id="alerts"><Alerts /></main>
+    </div>
   );
 }
-

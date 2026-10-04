@@ -8,12 +8,12 @@
   "scripts": {
     "dev": "npm run dev --workspace frontend",
     "build": "npm run build --workspace frontend",
-    "test": ".venv/bin/python -m pytest backend/tests",
+    "test": "npm run test:backend && npm run test:data",
     "test:backend": ".venv/bin/python -m pytest backend/tests",
+    "test:data": ".venv/bin/python -m pytest data_tools/test_etl.py",
     "start:backend": ".venv/bin/python backend/run.py"
   },
   "engines": {
     "node": ">=20.19"
   }
 }
-

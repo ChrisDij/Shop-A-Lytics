@@ -13,6 +13,9 @@ instance/
 *.sqlite
 *.sqlite-shm
 *.sqlite-wal
+analytics_salt.txt
+data/prepared/
+backend/reports/
 .env
 .env.*
 !.env.example
